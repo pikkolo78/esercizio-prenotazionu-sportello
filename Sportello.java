@@ -6,32 +6,50 @@ public class Sportello
 
    public int prenota(String nomeUtentePrenotato,int numeroPrenotazione)
    {
-   	String nome=nomeUtentePrenotato;
-   	int numero=numeroPrenotazione;
-   	Prenotazione prenot = new Prenotazione(nome,numero);
- 	prenotazioni.add(prenot);
- 	/*int posizione=prenotazioni.indexOf(prenot);
- 	return posizione;*/
- 	return numero;
+   	Prenotazione prenot = new Prenotazione(nomeUtentePrenotato,numeroPrenotazione);
+ 	  prenotazioni.add(prenot);
+ 	  return numeroPrenotazione;
    }
-   public Prenotazione proxPrenotazione() 
+   public Prenotazione estrai() 
    {
- 	  if (prenotazioni.size() == 0) 
- 	  {
- 		System.out.println("Nessuna prenotazione allo sportello");
- 	  }
- 	  
- 	  return prenotazioni.get(0);
-    }  
+ 	    if (prenotazioni.size() == 0) 
+ 	    {
+ 		    System.out.println("Nessuna prenotazione allo sportello");
+ 	    }
+ 	      return prenotazioni.get(0);
+        //prenotazioni.remove(0);
+   }  
+   public void rinuncia(int numeroRinuncia)
+   {
+     int contatPrenotazioni=0;
+     for (Prenotazione prenota :prenotazioni )
+     {
+        if (prenota.getNumeroPrenotazione() != numeroRinuncia) 
+           {
+             contatPrenotazioni++;
+           }
+           else 
+           {
+             prenotazioni.remove(prenota);
+           }
+      }
+      
+      if (contatPrenotazioni ==prenotazioni.size()) 
+      {
+        System.out.println("Nessuna prenotazione trovata");
+      }
+
+
+   }
  	 
     public void stampaInfoPrenotazioni()
-    {
- 	  for (Prenotazione prenota :prenotazioni ) 
- 	  {
- 		prenota.infoPrenotazione();
- 		System.out.println("****************");
- 	  }
-    } 
+   {
+ 	   for (Prenotazione prenota :prenotazioni ) 
+ 	   {
+ 		  prenota.infoPrenotazione();
+ 		  System.out.println("****************");
+ 	   }
+   } 
    
 
 

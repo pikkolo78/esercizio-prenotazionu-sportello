@@ -12,7 +12,8 @@ public class Main
 
 
 
-	sportello1.stampaInfoPrenotazioni();
+	//sportello1.stampaInfoPrenotazioni();
+	sportello1.rinuncia(7);
 
 	/*Prenotazione prenotazione2= new Prenotazione("Mario Rossi",2);
 	sportello1.prenotazione(prenotazione2);
