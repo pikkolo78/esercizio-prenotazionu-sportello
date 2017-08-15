@@ -15,16 +15,12 @@ public class Prenotazione
    {
    	return numeroPrenotazione;
    }
-   /*public String toString()
+   public String toString()
    {
-   	String oggetto=("Nome utente prenotato: "+ getNomeUtentePrenotato()+","+"Numero prenotazione: "+getNumeroPrenotazione());
+   	String oggetto="Nome utente prenotato: "+ getNomeUtentePrenotato()+","+"Numero prenotazione: "+getNumeroPrenotazione();
    	return oggetto;
-   }*/
-   public void infoPrenotazione()
-   {
-    System.out.println("Nome utente prenotato: "+ getNomeUtentePrenotato()+","+"Numero prenotazione: "+getNumeroPrenotazione());
    }
-
+   
 
 
 }
