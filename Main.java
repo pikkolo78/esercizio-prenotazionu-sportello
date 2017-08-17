@@ -3,29 +3,11 @@ public class Main
 {
    public static void main(String[] args)
    {
-     Scanner input =new Scanner(System.in);
-	   Sportello sportello1 =new Sportello();
+     Scanner input =new Scanner(System.in); //creaiamo metodo scannere per acquisire da tastiera
+	   Sportello sportello1 =new Sportello();//creaiamo oggetto sportello
 
-       /*sportello1.prenota("Gianni Rossi");
-	     sportello1.prenota("Antonio Dacc");
-	     sportello1.prenota("Maurizio Dimauro");
-	     sportello1.prenota("Agata Frisca");
-	     sportello1.prenota("Francesco Viscuso");
-	     sportello1.prenota("Gabriele Ardizzone");
-	     System.out.println(sportello1);
-	     try
-	       {
-	         sportello1.rinuncia(3);
-	         sportello1.rinuncia(5);
-	         System.out.println(sportello1);
-	         System.out.println(sportello1.tempoAttesa(6));
-	         System.out.println(sportello1.tempoAttesa(2));
-         }
-            catch(Exception ex)
-            {
-              System.out.println(ex);
-            }*/
-            String risposta;
+       //creaimo menu per utente
+            String risposta;//tramite il do while ,nel do facciamo stampare sempre il menu
         do
         {
           System.out.println("Menu Sportello: ");
@@ -36,9 +18,9 @@ public class Main
           System.out.println("5. Stampa prenotazioni");
           System.out.println("6. esci");
 
-          System.out.println("");
-          risposta=input.nextLine();
-          switch(risposta)
+          System.out.println("");//e poi lo gestiamo tramite  lo switch
+          risposta=input.nextLine();//si associa alla variabile in stringa la scelta del menu
+          switch(risposta)//per ogni risposta uncaso e un metodo da fare con le relative eccezioni....e le risposte acquisite da tastiera tramite i metodo next.int() o next.line()
           {
                case "1":  System.out.println("Digita nome e cognome");
                           sportello1.prenota(input.nextLine());break;
@@ -62,7 +44,9 @@ public class Main
                case "4": try
                             {
                                System.out.println("Digita il numero della prenotazione");
-                               System.out.println(sportello1.tempoAttesa(input.nextInt()));break;
+
+                               int numero= Integer.parseInt(input.nextLine()) ;
+                               System.out.println("Il tempo di attesa della prenotazione "+ numero + " e' "+sportello1.tempoAttesa(numero));break;
 
 
                             }
@@ -70,13 +54,12 @@ public class Main
                             {
                               System.out.println(ex);
                             }
-
                case "5": System.out.println(sportello1);break;
                case "6":break;
                default : System.out.println("selezione errata");break;
           }
         }
-        while(!risposta.equals("6"));
+        while(!risposta.equals("6"));//appena si digita il 6 la condizione del while viene a finire  e si esce se si vuole dal programma
 
 
 
